@@ -10,3 +10,30 @@
       }
     ])
   };
+
+
+//seraching form input filed
+    const [searchValue, setSearchValue] = useState('');
+    const [filteredResult, setFilteredResult] = useState([])
+    const [records, setRecords] = useState([
+        {
+            type: "A",
+            name: "ftp",
+            priority: "0",
+            content: "178.16.136.253",
+            TTL: "1800"
+        },
+    ]);
+    const handleChange = (e) => {
+        const value = e.target.value.toUpperCase();
+        setSearchValue(value);
+        const searchResult = records.filter(item => item.type.includes(value));
+        setFilteredResult(searchResult);
+        if (value === "") {
+            setFilteredResult(records)
+        }
+    }
+
+    useEffect(() => {
+        setFilteredResult(records);
+    }, [records])
