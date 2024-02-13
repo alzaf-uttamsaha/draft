@@ -20,7 +20,7 @@
             type: "A",
             name: "ftp",
             priority: "0",
-            content: "178.16.136.253",
+            content: "ip",
             TTL: "1800"
         },
     ]);
