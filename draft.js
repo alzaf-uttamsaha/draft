@@ -151,3 +151,50 @@ const Breadcrumb = ({ data, searching = false }) => {
 }
 
 export default Breadcrumb;
+
+
+//handle outside click
+"use client"
+const { useEffect } = require("react");
+
+export const HandleOutsideClickEvent = (subButtonRef, setIsMenuVisible) => {
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (
+            subButtonRef.current &&
+            !subButtonRef.current.contains(event.target)
+          ) {
+            setIsMenuVisible(false);
+          }
+        };
+    
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [subButtonRef, setIsMenuVisible]);
+}
+
+//sotck high low icon	
+
+swipper
+
+serch functionality
+
+=>Swipper
+=> Filter products
+=> Stock Summary Filter
+=>card bg
+=> Breadcumb msg
+
+transiton on state change
+
+filter icon issue	
+
+input value using custom inp
+
+modal
+handle outside click code
+searching fyc dropdown
+
+dynamic value get dynamic click
